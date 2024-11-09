@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>TO DO LIST</h1>
+    </header>
+    <main>
+        <br><a href="{% url 'tasks:add_task' %}"><button class="add">Add new task</button></a>
+
+        <br><br><form method="GET" action="{% url 'tasks:task_list' %}">
+            <label for="category" class="filter">Filter by category:</label>
+            <select name="category" id="category">
+                <option value="">All Categories</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}" {% if request.GET.category == category.id|stringformat:"s" %}selected{% endif %}>
+                        {{ category.name }}
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Filter">
+        </form>
+
+        {% if tasks %}
+            {% for task in tasks %}
+            <p>
+            <span class="{% if task.completed %} cp {% endif %}"><strong>{{ task.title }}</strong></span>
+            <a href="{% url 'tasks:edit_task' task.id %}"><button>Edit</button></a>
+            <a href="{% url 'tasks:delete_task' task.id %}"><button onclick="return confirm('Are you sure you want to delete this task?');">Delete</button></a>
+            <p>Created: {{ task.created }}</p>
+            </p>
+            {% endfor %}
+        {% else %}
+        <p>brak zadań</p>
+        {% endif %}
+    </main>
+</body>
+</html>

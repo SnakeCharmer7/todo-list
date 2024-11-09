@@ -1,0 +1,76 @@
+body {
+    background-color:  rgb(33, 11, 32);
+    color: rgb(240, 211, 239);
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    font-size: 20px;
+}
+
+main {
+    border: 2px solid rgb(240, 211, 239);
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.row {
+    list-style-type: none;
+    border: 2px solid rgb(240, 211, 239);
+}
+
+input[type=submit], button {
+    background-color: rgb(33, 11, 32);
+    color: rgb(240, 211, 239);
+    border: 2px solid rgb(240, 211, 239);
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(240, 211, 239);
+    color: rgb(33, 11, 32);
+}
+
+button:hover {
+    background-color: rgb(240, 211, 239);
+    color: rgb(33, 11, 32);
+}
+
+.add {
+    width: 95%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type=text], textarea {
+    background-color: rgb(33, 11, 32);
+    color: rgb(240, 211, 239);
+    border: 2px solid rgb(240, 211, 239);
+    border-radius: 5px;
+}
+
+.cp {
+    text-decoration: line-through;
+}
+
+select {
+    background-color: rgb(33, 11, 32);
+    color:rgb(240, 211, 239);
+    border: 2px solid rgb(240, 211, 239);
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.filter{
+    font-weight: bold;
+    font-size: x-large;
+}
